@@ -73,5 +73,5 @@ E: [cooneo@outlook.com](mailto:cooneo@outlook.com)
 
 For more details,you can search "COONEO" in your WeChat.
 
-![](/home/lee/桌面/Arduino_Raspberry_ROS_car/pictures/COONEO_wechat.jpg)
+![](pictures/COONEO_wechat.jpg)
 

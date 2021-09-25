@@ -1,0 +1,32 @@
+﻿
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>AdvertisementList</title>
+</head>
+<body style="margin:0px auto;text-align:center;border:none;text-align:center; width:100%;height:100%;">
+    <div style="background-image:url(backgroundImage.png);background-repeat:no-repeat; background-size:100%; width:500px;height:300px;">
+        <div id="software-vs" style="position:absolute; top:5px;left:5px;" >VS2.0.0.2</div>
+        
+    </div>
+    <div id="div_statu"  style="position:relative; top:2px;" >请稍后，系统正在启动.....</div>
+    <script type="text/javascript">
+        var bFormStatu = 0;
+        function setValue(wType, strMsg) {
+            if (wType == 0) {
+                document.getElementById("software-vs").innerHTML = strMsg;
+            }
+            else {
+                document.getElementById("div_statu").innerHTML = strMsg;
+            }
+        }
+        function closeForm() {
+            bFormStatu = 1;
+        }
+        function getFormStatu() {
+            return bFormStatu;
+        }
+    </script>
+</body>
+</html>

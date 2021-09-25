@@ -1,0 +1,25 @@
+global_costmap:
+  global_frame: map
+  
+  robot_base_frame: base_link
+  update_frequency: 0.5
+     
+  
+  robot_radius: 0.10   #圆形机器人的半径为 0.10 m
+  
+  plugins: 
+      - {name: static,    type: "costmap_2d::StaticLayer"}            
+      - {name: sensor,    type: "costmap_2d::ObstacleLayer"}
+      - {name: inflation, type: "costmap_2d::InflationLayer"}
+
+  inflation:
+        enabled: true
+        inflation_radius: 0.10   #0.35
+#cost_scaling_factor: 10.0
+
+  static:
+        enabled: true
+        
+  sensor:
+        observation_sources: laser_scan
+        laser_scan: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}

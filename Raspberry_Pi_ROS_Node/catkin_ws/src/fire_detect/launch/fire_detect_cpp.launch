@@ -1,0 +1,7 @@
+<launch>
+  <node pkg ="fire_detect" name="fire_detect_node" type="fire_detect_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="redThre" value="49" />
+    <param name="saturationTh" value="7" />
+  </node>
+</launch>

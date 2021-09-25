@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<message>
+  <record>固件升级|Firmware update</record>
+  <record>文件:|File:</record>
+  <record>浏览...|Browse...</record>
+  <record>开始升级|Start upgrading</record>
+  <record>升级成功|Successful upgrade</record>
+  <record>升级失败|Upgrade failure</record>
+  <record>无法完成传输。|Can't complete the transfer.</record>
+  <record>升级失败:无回应。|Upgrade failure: no response.</record>
+  <record>升级失败:无法发送初始数据包。|Can't send the initial packet.</record>
+  <record>就绪......|Be ready......</record>
+  <record>发送数据包异常，请检测串口！|Send abnormal data packet, please detect the serial port!</record>
+  <record>正在升级。。。|Upgrading...</record>
+  <record>系统提示|System Tips</record>
+  <record>请选择升级文件！|Please select the upgrade file!</record>
+  <record>连接超时，请重试！|Connection timeout, please try again!</record>
+  <record>请给模块重新上电！|Please re-energize the module!</record>
+  <record>下发指令失败，请检测串口。|Failed to issue instructions, please detect the serial port.</record>
+  <record>发送重启指令。。。|Send a restart command...</record>
+  <record>正在解锁。。。|Unlocking...</record>
+  <record>打开串口失败，检测是否占用。|Failed to open serial port to detect occupancy.</record>
+  <record>请选择文件|Please select the file</record>
+  <record>二进制文件|Binary file</record>
+  <record>所有文件|All files</record>
+</message>
+</root>

@@ -1,0 +1,27 @@
+<launch> 
+    <!-- launch the ros_arduino_bridge node and publish odom data for robot_localization node -->
+    <include file="$(find ros_arduino_python)/launch/arduino.launch" />
+    
+    <!-- launch the imu node and publish the imu data for robot_localization node-->
+    <include file="$(find imu_901)/launch/imu_901.launch" />
+
+    <!-- fusion the odom and imu data and publish the odom——> base_link tf for gmapping -->
+    <include file="$(find launch_file)/launch/robot_localization.launch" />
+
+    <!-- launch the gmapping launch file .
+        Listen tf:
+            odom ——>  base_link
+            laser_link ——>  base_link
+        Subscribe Topisc:
+            scan (sensor_msgs/LaserScan)
+        
+        Publish Topisc:
+            map
+     -->
+    <include file="$(find launch_file)/launch/gmapping.launch" />
+
+    <!--  launch the lidar node,publish the scan topic and laser_link ——> base_link tf(static)-->
+    <include file="$(find launch_file)/launch/rplidar.launch" />
+
+
+</launch>

@@ -1,0 +1,29 @@
+local_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 10.0
+  publish_frequency: 10.0
+  rolling_window: true  #如果static_map设置为true的话，此参数必须设置为false
+  always_send_full: true #default is false
+  width: 3.0
+  height: 3.0
+  resolution: 0.05
+ 
+  robot_radius: 0.10   #圆形机器人的半径为 0.10 m
+
+  plugins:
+      - {name: static,    type: "costmap_2d::StaticLayer"}
+      - {name: sensor,    type: "costmap_2d::ObstacleLayer"}
+      - {name: inflation, type: "costmap_2d::InflationLayer"}
+
+  inflation:
+      enabled: true
+      inflation_radius: 0.10  
+
+  
+  static:
+      enabled: true
+
+  sensor:
+        observation_sources: laser_scan
+        laser_scan: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}

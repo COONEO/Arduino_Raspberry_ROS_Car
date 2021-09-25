@@ -1,0 +1,4 @@
+G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\temp\MiniIMU.exe,G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\MiniIMU.exe
+G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\temp\zh-CN\MiniIMU.resources.dll,G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\zh-CN\MiniIMU.resources.dll
+G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\temp\zh-Hans\MiniIMU.resources.dll,G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\zh-Hans\MiniIMU.resources.dll
+G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\temp\zh\MiniIMU.resources.dll,G:\公司文件\jobFile\产品和上位机\上位机\最新陀螺仪上位机\标准上位机_Normal\标准上位机_Normal_New_20200313\zh\MiniIMU.resources.dll

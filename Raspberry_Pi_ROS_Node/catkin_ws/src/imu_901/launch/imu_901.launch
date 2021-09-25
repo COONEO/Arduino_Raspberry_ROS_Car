@@ -1,0 +1,24 @@
+<!---->
+<launch>
+  <!-- start imu (JY91) node -->
+  <node pkg="imu_901" type="imu_901_node" name="imu_901" required="true" output="screen" >
+    <param name="port" value="/dev/IMU_PORT"/>
+    <param name="baudrate" value="115200" />
+  </node>
+  
+  <!-- start imu filter node -->
+  <node pkg="imu_complementary_filter" type="complementary_filter_node" name="complementary_filter_gain_node" output="screen">
+    <param name="do_bias_estimation" value="true"/>
+    <param name="do_adaptive_gain" value="true"/>
+    <param name="use_mag" value="false"/>
+    <param name="gain_acc" value="0.01"/>
+    <param name="gain_mag" value="0.01"/>
+    <remap from="imu/data" to="imu" />
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="imu_static_tf" args="0.095 -0.05 0.0 0 0 0 base_link imu_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="mag_static_tf" args="0.0 0 0.0 0 0 0 base_link mag_link 100" />
+  <!--
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find imu_901)/imu_rviz.rviz" />
+  -->
+</launch>

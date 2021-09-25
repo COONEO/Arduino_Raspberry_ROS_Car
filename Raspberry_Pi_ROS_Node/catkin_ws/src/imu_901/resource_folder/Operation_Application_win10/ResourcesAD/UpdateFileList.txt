@@ -1,0 +1,5 @@
+﻿playPic\12.jpg,7,10,https://robotcontrol.taobao.com
+playPic\16.jpg,4,10,https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-18184610681.21.72c844bcQ5bkBl&id=561973379039
+playPic\13.jpg,4,10,https://item.taobao.com/item.htm?spm=a1z10.1-c.w12075169-17261776078.1.4a563971vYK1bA&id=587961204951&scene=taobao_shop
+playPic\15.jpg,3,10,https://item.taobao.com/item.htm?spm=a1z10.3-c.w4002-18184610691.119.76202a2fCiTEkw&id=573583602233
+playPic\14.jpg,1,10,https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-21345131505.19.44785fb3B51RVS&id=552954754353

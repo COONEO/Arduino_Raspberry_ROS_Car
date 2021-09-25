@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find ros_arduino_python)/launch/arduino.launch" />
+    <include file="$(find fire_detect)/launch/fire_detect.launch" />
+</launch>

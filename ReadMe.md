@@ -1,6 +1,8 @@
 # Arduino_Raspberry_ROS_Car Tutorials
 
-![](pictures/logo.jpg)
+![](pictures/car.jpg)
+
+
 
 ## chapter 1: Construction A ROS Car
 
@@ -57,11 +59,111 @@ The OS img can be finding in our **Wechat Official Account COONEO.** Process lik
 
    In the end,you can publish Topic "cmd_vel" msg to control ROS car runnning。
 
-   ![](pictures/car.jpg)
+   ![](pictures/face2.jpg)
+
+## chapter 2:  Gmapping with Arduino_Raspnerry_Car
+
+Step 1 : launch gmapping launch file and watching.
+
+```bash
+# open a Terminal 
+cd catkin_ws
+source devel/setup.bash
+roslaunch launch_file gmapping_ekf.launch
+
+# open a Rviz && Visual a map
+rosrun rviz rviz
+```
+
+![](pictures/gmapping.png)
 
 
 
- 2021.05.31
+Step 2 : save the map 
+
+```bash
+# open a Terminal 
+# cd in your folder,P.S.
+cd catkin_ws/src/launch_file/map/
+rosrun map_server map_saver -f your_map_name
+```
+
+​	and then,the folder will create two files,they are **your_map_name.pgm** && **your_map_name.yaml** file.
+
+
+
+## chapter 3 : Run ROS navigation stack
+
+Step 1 : launch navigation_ekf.launch file.
+
+```bash
+# open a Terminal
+cd catkin_ws
+source devel/setup.bash
+roslaunch launch_file navigation_ekf.launch
+
+# and open another Terminal
+rosrun rviz rviz
+```
+
+select topics like this in Rviz.
+
+![](pictures/navigation_demo.png)
+
+
+
+and then,click the "2D Nav Goal" button to select a Goal pose.for details,please see the "demo_videos/03_ROS_Navigation_function.mp4" file.
+
+
+
+## Chapter 4 : Fire detect
+
+```bash
+# open a Terminal
+cd catkin_ws
+source devel/setup.bash
+fire_detect_cpp.launch   #or "fire_detect.launch"
+
+# and open another Terminal
+rosrun rviz rviz
+```
+
+![](pictures/fire_detect.png)
+
+for more details,please see the "demo_videos/04_Fire_detect_based_on_color.mp4" file. or search the "COONEO" in your Bilibili.
+
+
+
+## chapter 5 : automatic following the line
+
+Step 1 : launch the ros_arduino_bridge node.
+
+```bash
+# open a terminal 
+cd catkin_ws
+source devel/setup.bash
+
+roslaunch ros_arduino_python arduino.launch
+```
+
+
+
+Step 2 : launch the line_track launch file.
+
+```bash
+# open another terminal 
+cd catkin_ws
+source devel/setup.bash
+roslaunch line_track linetrack_red.launch
+```
+
+![](pictures/巡线效果.gif)
+
+
+
+
+
+ 2021.09.25
 
  author:ZhaoXiang Lee
 
@@ -74,4 +176,10 @@ E: [cooneo@outlook.com](mailto:cooneo@outlook.com)
 For more details,you can search "COONEO" in your WeChat.
 
 ![](pictures/COONEO_wechat.jpg)
+
+
+
+or search "COONEO" in Bilibili.
+
+![](pictures/Bilibili.jpg)
 

@@ -28,6 +28,32 @@ from math import sin, cos, pi
 from geometry_msgs.msg import Quaternion, Twist, Pose
 from nav_msgs.msg import Odometry
 from tf.broadcaster import TransformBroadcaster
+
+ODOM_POSE_COVARIANCE = [1e-3, 0, 0, 0, 0, 0, 
+                        0, 1e-3, 0, 0, 0, 0,
+                        0, 0, 1e6, 0, 0, 0,
+                        0, 0, 0, 1e6, 0, 0,
+                        0, 0, 0, 0, 1e6, 0,
+                        0, 0, 0, 0, 0, 1e3]
+ODOM_POSE_COVARIANCE2 = [1e-9, 0, 0, 0, 0, 0, 
+                         0, 1e-3, 1e-9, 0, 0, 0,
+                         0, 0, 1e6, 0, 0, 0,
+                         0, 0, 0, 1e6, 0, 0,
+                         0, 0, 0, 0, 1e6, 0,
+                         0, 0, 0, 0, 0, 1e-9]
+
+ODOM_TWIST_COVARIANCE = [1e-3, 0, 0, 0, 0, 0, 
+                         0, 1e-3, 0, 0, 0, 0,
+                         0, 0, 1e6, 0, 0, 0,
+                         0, 0, 0, 1e6, 0, 0,
+                         0, 0, 0, 0, 1e6, 0,
+                         0, 0, 0, 0, 0, 1e3]
+ODOM_TWIST_COVARIANCE2 = [1e-9, 0, 0, 0, 0, 0, 
+                          0, 1e-3, 1e-9, 0, 0, 0,
+                          0, 0, 1e6, 0, 0, 0,
+                          0, 0, 0, 1e6, 0, 0,
+                          0, 0, 0, 0, 1e6, 0,
+                          0, 0, 0, 0, 0, 1e-9]
  
 """ Class to receive Twist commands and publish Odometry data """
 class BaseController:
@@ -183,6 +209,13 @@ class BaseController:
             odom.twist.twist.linear.x = vxy
             odom.twist.twist.linear.y = 0
             odom.twist.twist.angular.z = vth
+
+            if vxy == 0 and vth == 0 :
+                odom.pose.covariance = ODOM_POSE_COVARIANCE2
+                odom.twist.covariance = ODOM_TWIST_COVARIANCE2
+            else :
+                odom.pose.covariance = ODOM_POSE_COVARIANCE
+                odom.twist.covariance = ODOM_TWIST_COVARIANCE
 
             self.odomPub.publish(odom)
             

@@ -48,17 +48,18 @@ The OS img can be finding in our **Wechat Official Account COONEO.** Process lik
    
    # change *.py file's permission 
    sudo chmod 0777 Arduino_Raspberry_ROS_car/Raspberry_Pi_ROS_Node/catkin_ws/src/ros_arduino_bridge/ros_arduino_python/src/ros_arduino_python/*
+   sudo chmod 0777 Arduino_Raspberry_ROS_car/Raspberry_Pi_ROS_Node/catkin_ws/src/ros_arduino_bridge/ros_arduino_python/nodes/arduino_node.py
    
    cd catkin_ws
    catkin_make
    source devel/setup.bash
    roslaunch ros_arduino_python arduino.launch
    ```
-
    
-
+   
+   
    In the end,you can publish Topic "cmd_vel" msg to control ROS car runnning。
-
+   
    ![](pictures/face2.jpg)
 
 ## chapter 2:  Gmapping with Arduino_Raspnerry_Car

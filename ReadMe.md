@@ -24,6 +24,14 @@ Install Arduino IDE in your computer and add library where in Arduino_mega_2560_
 
 
 
+ps:新增了适配我们Arduino扩展板的程序，见文件夹 “**RobotPIDDriver_tb6612**”。配置过程参见如下的两篇微信公众号推文。
+
+![](pictures/run_ros_motor.jpeg)
+
+![](pictures/Arduino_PID.jpg)
+
+
+
 ### Step Two: FLASH OS and LAUNCH ROS NODE
 
 1.flash Ubuntu OS into your Pi 4B board (By Win32DiskImager.exe)

@@ -32,6 +32,16 @@ ps:新增了适配我们Arduino扩展板的程序，见文件夹 “**RobotPIDDr
 
 
 
+如果你使用的是Arduino 大功率电机及驱动器扩展板，那么烧录的程序就应该在该目录下：
+
+```
+Arduino_mega_2560_code/Arduino_mega_2560大功率电机扩展板_code/Arduino-大功率电机驱动板_PID调速_ROS/RobotPIDDriver
+```
+
+具体的步骤，该文件夹中有图片提示。
+
+
+
 ### Step Two: FLASH OS and LAUNCH ROS NODE
 
 1.flash Ubuntu OS into your Pi 4B board (By Win32DiskImager.exe)

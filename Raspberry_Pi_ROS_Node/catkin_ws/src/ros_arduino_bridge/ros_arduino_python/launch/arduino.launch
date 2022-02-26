@@ -2,5 +2,7 @@
    <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
       <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
    </node>
+    <node pkg="tf" type="static_transform_publisher" name="transform_from_front_sonar_to_base_link" args="0.205 0.0 0.0 0.0 0.0 0.0 base_link  Front_sonar 50" />
+
 </launch>
  

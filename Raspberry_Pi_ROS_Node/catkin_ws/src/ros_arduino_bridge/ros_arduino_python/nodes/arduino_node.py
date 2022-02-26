@@ -156,6 +156,11 @@ class ArduinoROS():
                 self.myBaseController.poll()
                 mutex.release()
 
+            if self.use_base_controller:
+                mutex.acquire()
+                self.myBaseController.poll_ultra_data()
+                mutex.release()
+
             # Publish all sensor values on a single topic for convenience
             '''
             now = rospy.Time.now()

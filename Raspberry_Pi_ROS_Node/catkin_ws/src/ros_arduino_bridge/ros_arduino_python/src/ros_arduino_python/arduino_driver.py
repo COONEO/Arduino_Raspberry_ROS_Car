@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""
+""" 
     A Python driver for the Arduino microcontroller running the
     ROSArduinoBridge firmware.
 
@@ -10,7 +10,7 @@
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+    (at your option) any later version. 
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -40,8 +40,8 @@ class Arduino:
 
     def __init__(self, port="/dev/ttyUSB0", baudrate=57600, timeout=0.5, motors_reversed=False):
 
-        self.PID_RATE = 60                        # Do not change this!  It is a fixed property of the Arduino PID controller.
-        self.PID_INTERVAL = 1000 / 60  
+        self.PID_RATE = 100                        # Do not change this!  It is a fixed property of the Arduino PID controller.
+        self.PID_INTERVAL = 1000 / 100  
 
         self.port = port
         self.baudrate = baudrate
@@ -273,6 +273,11 @@ class Arduino:
             if self.motors_reversed:
                 values[0], values[1] = -values[0], -values[1]
             return values
+            
+    # add the ultra sensor range data. 
+    def get_ultra_range_m(self):
+        range_cm = self.execute('g')
+        return range_cm / 100.0  # m
 
     def reset_encoders(self):
         ''' Reset the encoder counts to 0

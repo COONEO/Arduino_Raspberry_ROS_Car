@@ -3,13 +3,13 @@
 # For a wireless connection like XBee, the port is typically
 # /dev/ttyUSB# where # is a number such as 0, 1, 2, etc.
 
-port: /dev/ttyACM0
+port: /dev/Arduino_PORT
 baud: 115200
 timeout: 0.2
 
 rate: 30
 sensorstate_rate: 10 
- 
+  
 use_base_controller: true    #有实际的小车
 base_controller_rate: 10      #how many rates to publish odom topics
 
@@ -18,12 +18,12 @@ base_frame: base_link
 
 # === Robot drivetrain parameters
 wheel_diameter: 0.065     #轮胎直径 m
-wheel_track: 0.15        #轮间距 m
+wheel_track: 0.201        #轮间距 m
 encoder_resolution: 52   #A B相 13ppr 减速比 边沿触发 13*2*2 pluse/转
-gear_reduction: 48        #齿轮减速比
+gear_reduction: 30        #齿轮减速比
 motors_reversed: False  #轮子相后转的时候才设置为True
 
-# === PID parameters
+# === PID parameters not use
 Kp: 10
 Kd: 12
 Ki: 0

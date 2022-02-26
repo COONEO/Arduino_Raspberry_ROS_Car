@@ -17,7 +17,7 @@
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details at:
-    
+     
     http://www.gnu.org/licenses
 """   
 import roslib; roslib.load_manifest('ros_arduino_python')
@@ -28,6 +28,7 @@ from math import sin, cos, pi
 from geometry_msgs.msg import Quaternion, Twist, Pose
 from nav_msgs.msg import Odometry
 from tf.broadcaster import TransformBroadcaster
+from sensor_msgs.msg import Range
 
 ODOM_POSE_COVARIANCE = [1e-3, 0, 0, 0, 0, 0, 
                         0, 1e-3, 0, 0, 0, 0,
@@ -116,6 +117,9 @@ class BaseController:
         # Set up the odometry broadcaster
         self.odomPub = rospy.Publisher('wheel_odom', Odometry, queue_size=5)
         self.odomBroadcaster = TransformBroadcaster()
+
+        # Set up the ultra sensor detect range broadcaster.
+        self.ultra_range_Pub = rospy.Publisher('Front_sonar', Range, queue_size=5)
         
         rospy.loginfo("Started base controller for a base of " + str(self.wheel_track) + "m wide with " + str(self.encoder_resolution) + " ticks per rev")
         rospy.loginfo("Publishing odometry data at: " + str(self.rate) + " Hz using " + str(self.base_frame) + " as base frame")
@@ -142,6 +146,28 @@ class BaseController:
         self.Ko = pid_params['Ko']
         
         self.arduino.update_pid(self.Kp, self.Kd, self.Ki, self.Ko)
+
+    def poll_ultra_data(self):
+        now = rospy.Time.now()
+        
+        try:
+            ultra_range_m = self.arduino.get_ultra_range_m()
+            if(ultra_range_m > 4.5):
+                ultra_range_m = 4.5
+        except:
+            rospy.logerr("Ultra sensor range err")
+            return
+        
+        ultra_msg = Range()
+        ultra_msg.header.frame_id = "Front_sonar"
+        ultra_msg.header.stamp = now
+        ultra_msg.min_range = 0.02
+        ultra_msg.max_range = 4.5
+        ultra_msg.field_of_view = 15.0 * (pi / 180.0)
+        ultra_msg.radiation_type = Range.ULTRASOUND
+        ultra_msg.range = ultra_range_m
+        self.ultra_range_Pub.publish(ultra_msg)
+
 
     def poll(self):
         now = rospy.Time.now()

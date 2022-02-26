@@ -3,6 +3,7 @@
 #include "Make4e2ndChassis.h"
 #include "commands.h"
 #include <PID_v1.h>
+#include "sensors.h"
 
 typedef struct
 {
@@ -31,8 +32,8 @@ double encoderresolution = 1560.0;   //编码器输出脉冲数/圈 2*2*13*30 = 
 
 /*********************  第四步修改 PID 参数，优化电机的调速性能  *********/
 
-double Kp_L = 15.0, Ki_L = 30.0, Kd_L = 0.0001;   // 15.0 15.00 0.0001
-double Kp_R = 15.0, Ki_R = 30.0, Kd_R = 0.0001;   // 15.0 15.00 0.0001
+double Kp_L = 5.0, Ki_L = 30.0, Kd_L = 0.0001;   // 15.0 15.00 0.0001
+double Kp_R = 5.0, Ki_R = 30.0, Kd_R = 0.0001;   // 15.0 15.00 0.0001
 
 
 PID leftPID(&leftInfo.input, &leftInfo.output, &leftInfo.target, Kp_L, Ki_L, Kd_L, DIRECT);
@@ -165,6 +166,9 @@ int runCommand() {
       Serial.print(" Ki_L:");
       Serial.print(Ki_L);
       break;
+    case READ_RANGE:
+      Serial.println(Ultra_Range_cm);
+      break; 
     default:
       Serial.println("Invalid Command");
       break;
@@ -187,6 +191,8 @@ void setup()
   rightPID.SetOutputLimits(-200, 200);
 
   led_blink_Init();
+  // 初始化超声波接口 初始化
+  init_ultra_sensor(); 
 
   setTargetTicksPerFrame(0, 0);
 }
@@ -309,6 +315,9 @@ void loop()
   // {
     // setTargetTicksPerFrame(0, 0);
   // }
+
+  // 执行超声波测距程序 ,测量的值保存在 全局变量 Ultra_Range_cm(int) 中 。
+  Detection_Front_Range();
   
 }
 

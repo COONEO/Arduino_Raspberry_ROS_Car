@@ -317,6 +317,7 @@ void loop()
   // }
 
   // 执行超声波测距程序 ,测量的值保存在 全局变量 Ultra_Range_cm(int) 中 。
+  // 如果不用超声波，建议将这个超声波测距函数注释掉，其会占用一定的系统时间
   Detection_Front_Range();
   
 }

@@ -1,12 +1,18 @@
 # Arduino_Raspberry_ROS_Car Tutorials
 
-![](pictures/car.jpg)
-
-
+![](pictures/cars.jpg)
 
 ## chapter 1: Construction A ROS Car
 
 ![](pictures/扩展板.jpg)
+
+​                                                                                                                                                                                                                                      （TB6612FNG 版本）
+
+![](pictures/A4950T_v1.1.jpg)
+
+​                                                                                                                                                                                                                                                   (A4950T 版本)
+
+
 
 Download codes from Git:
 
@@ -24,11 +30,15 @@ Install Arduino IDE in your computer and add library where in Arduino_mega_2560_
 
 
 
-ps:新增了适配我们Arduino扩展板的程序，见文件夹 “**RobotPIDDriver_tb6612**”。配置过程参见如下的两篇微信公众号推文。
+ps:新增了适配我们Arduino扩展板的程序，见文件夹 “**RobotPIDDriver_tb6612**”  "**RobotPIDDriver_A4950T**"。配置过程参见如下的两篇微信公众号推文。
 
 ![](pictures/run_ros_motor.jpeg)
 
 ![](pictures/Arduino_PID.jpg)
+
+
+
+![](pictures/image12.jpg)
 
 
 
@@ -38,7 +48,7 @@ ps:新增了适配我们Arduino扩展板的程序，见文件夹 “**RobotPIDDr
 Arduino_mega_2560_code/Arduino_mega_2560大功率电机扩展板_code/Arduino-大功率电机驱动板_PID调速_ROS/RobotPIDDriver
 ```
 
-具体的步骤，该文件夹中有图片提示。
+具体的步骤，该文件夹中有图片提示，详细的过程，在我们的微信公众号“COONEO”   知乎 “Neor”   B站 “COONEO” 中均有。
 
 
 
@@ -78,7 +88,7 @@ The OS img can be finding in our **Wechat Official Account COONEO.** Process lik
    
    In the end,you can publish Topic "cmd_vel" msg to control ROS car runnning。
    
-   ![](pictures/face2.jpg)
+   ![](pictures/car.jpg)
 
 ## chapter 2:  Gmapping with Arduino_Raspnerry_Car
 
@@ -182,7 +192,7 @@ roslaunch line_track linetrack_red.launch
 
 
 
- 2021.09.25
+2022.04.25
 
  author:ZhaoXiang Lee
 
@@ -200,5 +210,5 @@ For more details,you can search "COONEO" in your WeChat.
 
 or search "COONEO" in Bilibili.
 
-![](pictures/Bilibili.jpg)
+![](pictures/bilibili.jpg)
 

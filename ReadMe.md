@@ -90,7 +90,7 @@ The OS img can be finding in our **Wechat Official Account COONEO.** Process lik
    
    ![](pictures/car.jpg)
 
-## chapter 2:  Gmapping with Arduino_Raspnerry_Car
+## chapter 2:  Gmapping with Arduino_Raspberry_Car
 
 Step 1 : launch gmapping launch file and watching.
 

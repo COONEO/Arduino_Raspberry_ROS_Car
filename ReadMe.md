@@ -75,8 +75,8 @@ The OS img can be finding in our **Wechat Official Account COONEO.** Process lik
    cp -r Arduino_Raspberry_ROS_car/Raspberry_Pi_ROS_Node/catkin_ws ~/
    
    # change *.py file's permission 
-   sudo chmod 0777 Arduino_Raspberry_ROS_car/Raspberry_Pi_ROS_Node/catkin_ws/src/ros_arduino_bridge/ros_arduino_python/src/ros_arduino_python/*
-   sudo chmod 0777 Arduino_Raspberry_ROS_car/Raspberry_Pi_ROS_Node/catkin_ws/src/ros_arduino_bridge/ros_arduino_python/nodes/arduino_node.py
+   sudo chmod a+x Arduino_Raspberry_ROS_car/Raspberry_Pi_ROS_Node/catkin_ws/src/ros_arduino_bridge/ros_arduino_python/src/ros_arduino_python/*
+   sudo chmod a+X Arduino_Raspberry_ROS_car/Raspberry_Pi_ROS_Node/catkin_ws/src/ros_arduino_bridge/ros_arduino_python/nodes/arduino_node.py
    
    cd catkin_ws
    catkin_make
@@ -192,7 +192,7 @@ roslaunch line_track linetrack_red.launch
 
 
 
-2022.04.25
+2022.05.11
 
  author:ZhaoXiang Lee
 
